@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> النرجس للتطريز | الفخامة والإتقان</title>
+    <style>
+        /* الألوان والهوية البصرية للموقع */
+        :root {
+            --primary-color: #5c3d48; /* العنابي الملكي للمطرزات */
+            --accent-color: #d4af37;  /* الذهبي للمسات الفاخرة */
+            --bg-color: #fdfbf7;      /* الكريمي الهادئ للخلفية */
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* شريط التنقل العلوي */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* تنسيق قسم الشعار */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 45px; /* مقاس مناسب جداً للشعار في الشريط العلوي */
+            height: 45px;
+            border-radius: 50%; /* لجعل الشعار دائرياً وأنيقاً */
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo-text span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        /* القسم الترحيبي البطل (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, #5c3d48 0%, #3a252e 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #e0d5da;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background-color: #c29d2c;
+            transform: translateY(-3px);
+        }
+
+        /* قسم النبذة المختصرة والجودة */
+        .about-brief {
+            max-width: 800px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .about-brief h2 {
+            color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .about-brief p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+
+        /* قسم الخدمات السريع */
+        .services-preview {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .services-preview h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-secondary {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--accent-color);
+            transition: color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--accent-color);
+        }
+
+        /* تذييل الصفحة Footer */
+        footer {
+            background-color: #22151a;
+            color: #b5a4ab;
+            text-align: center;
+            padding: 20px;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <img src="317510915_558162199465173_6959746518358324852_n.jpg" alt="شعار  النرجس" class="logo-img">
+                <div class="logo-text"> <span>النرجس</span></div>
+            </div>
+            <nav>
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="services.html">خدماتنا</a>
+                <a href="order.html">اطلب الآن</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>نُحوّل ثيابكم إلى لوحات فنية</h1>
+        <p>مرحباً بكم في  النرجس.. حيث ندمج دقة الخيوط بفخامة التصميم لتطريز يعبر عن ذوقكم الرفيع.</p>
+        <a href="order.html" class="btn-main">اطلب تطريزك الآن</a>
+    </section>
+
+    <section class="about-brief">
+        <h2>لماذا تختار النرجس؟</h2>
+        <div class="divider"></div>
+        <p>في النرجس، لا نكتفي بالتطريز فقط، بل نختار أجود أنواع الخيوط التي لا تتأثر بالغسيل، ونستخدم تقنيات حديثة تضمن لكم دقة متناهية في التفاصيل، لتبقى ملابسكم مميزة وتدوم طويلاً.</p>
+    </section>
+
+    <section class="services-preview">
+        <h2>أبرز خدماتنا</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-icon">👕</div>
+                <h3>التطريز على ملابسك الخاصة</h3>
+                <p>هل لديك لباس جاهز (قميص، فستان، عباءة) وتريد إضافة لمسة مميزة عليه؟ ارفع تصميمك وسنتولى الباقي.</p>
+                <a href="services.html" class="btn-secondary">التفاصيل ←</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧵</div>
+                <h3>تصميم وتفصيل متكامل</h3>
+                <p>نوفر لكم أفخم الأقمشة والملابس المجهزة مسبقاً، ونقوم بتطريزها بناءً على رغبتكم بالكامل ومن الصفر.</p>
+                <a href="services.html" class="btn-secondary">التفاصيل ←</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026  النرجس للتطريز. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
