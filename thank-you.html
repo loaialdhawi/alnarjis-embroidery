@@ -11,6 +11,7 @@
             --bg-color: #fdfbf7;
             --white: #ffffff;
         }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -21,6 +22,7 @@
             height: 100vh;
             margin: 0;
         }
+
         .thank-you-card {
             background-color: var(--white);
             padding: 40px;
@@ -30,20 +32,28 @@
             max-width: 500px;
             border: 1px solid #eee;
         }
-        .icon {
-            font-size: 50px;
-            color: var(--accent-color);
+
+        /* تنسيق شعار النرجس الدائري في صفحة الشكر */
+        .logo-img-thank {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-bottom: 20px;
+            border: 2px solid var(--accent-color); /* إطار ذهبي خفيف حول الشعار */
         }
+
         h1 {
             color: var(--primary-color);
             margin-bottom: 10px;
         }
+
         p {
             font-size: 18px;
             color: #555;
             margin-bottom: 30px;
         }
+
         .btn-back {
             background-color: var(--primary-color);
             color: var(--white);
@@ -54,9 +64,11 @@
             transition: 0.3s;
             display: inline-block;
         }
+
         .btn-back:hover {
             background-color: #422b33;
         }
+
         /* تنسيق إضافي لصفحة الشكر على الهواتف */
         @media (max-width: 768px) {
             .thank-you-card {
@@ -75,7 +87,8 @@
 <body>
 
     <div class="thank-you-card">
-        <div class="icon">🌸✨</div>
+        <img src="317510915_558162199465173_6959746518358324852_n.jpg" alt="شعار النرجس" class="logo-img-thank">
+        
         <h1>تم إرسال طلبك بنجاح!</h1>
         <p>شكراً لثقتك بالنرجس للتطريز، سيقوم فريقنا بمراجعة تفاصيل طلبك والتواصل معك عبر الواتساب في أقرب وقت ممكن.</p>
         <a href="index.html" class="btn-back">العودة للرئيسية</a>
