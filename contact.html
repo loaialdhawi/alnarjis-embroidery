@@ -219,7 +219,33 @@
             margin-top: 60px;
             font-size: 14px;
         } 
-          
+        /* حل مشكلة التداخل على الهواتف الذكية */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                text-align: center;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            nav a {
+                margin: 0;
+                font-size: 14px;
+                white-space: nowrap; /* يمنع الكلمة من الانقسام لسطرين */
+            }
+        }  
     </style>
 <link rel="icon" type="image/png" href="lo.png">
 </head>
